@@ -1,0 +1,230 @@
+@include keyframes (popUp) {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.styleguide {
+
+  .header{
+    padding-top:rem(16);
+    padding-bottom:rem(16);
+    background:color(4);  
+  }
+
+  .logo {
+    display: inline-block;
+    height:rem(60);
+    //path is relative to file where is index sass
+    background-image: url("../content/logo.svg");
+  }
+
+    .header-xxs-sm {
+      display: none;
+      @media #{$bp-xxs-sm} {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;        
+
+        .hamburger {
+          display: inline-block;
+          width:rem(60);
+          height: rem(60);
+          background: url("../content/hamburger.svg");
+          border:none;
+        }
+
+        .logo {          
+          width:rem(60);
+        }
+      }      
+    }
+  
+    .header-md-xl {
+      display: none;
+      
+      @media #{$bp-md-xl} {
+        display: block;
+        .logo {          
+          width:rem(233);
+        }                     
+      }      
+    }
+
+    
+
+  .layout {
+    display: flex;
+    padding:rem(40) 0;
+    box-sizing: border-box;
+  }
+
+    .navigation {
+      flex:0 0 rem(240);
+      box-sizing: border-box;
+      margin-right:rem(48);
+
+      @media #{$bp-xxs-sm} {
+        display: none;
+      }
+
+      button {        
+        @include button-reset;        
+        display: block;
+        width:100%;
+        padding:rem(8) 0;                
+        text-decoration:none;
+
+        color:color(5);
+
+        &.active,
+        &:focus {
+          color:color(3);
+          font-weight:bold;
+        }
+
+        &:focus {
+          outline:none;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .content {
+      box-sizing: border-box;
+      flex:1 1 auto;      
+      max-width: calc(100% - #{rem(300)});
+
+      @media #{$bp-xxs-sm} {
+        max-width: 100%;
+      }
+    }
+
+      .color {
+        border:1px solid color(3);
+        width:rem(50);
+        height:rem(50);
+      }
+
+      .grid-col{
+        box-sizing: border-box;
+        color:color(4);
+        background-color: color(2);
+        padding:rem(20);
+        height:rem(60);
+      }
+
+  
+  // Lightbox
+  .lightbox{
+    //this needs to sit on the very top
+    position: relative;
+    z-index: -1;
+
+    &.is-active {
+      z-index: 2;
+    }
+    
+    .lightbox-overlay { 
+      position: fixed;
+      top:0;
+      right:0;
+      bottom: 0;
+      left:0;
+
+      overflow: hidden;
+      background:rgba(0,0,0,.64);
+
+      opacity:0;      
+    }
+
+    &.is-active {
+      .lightbox-overlay {
+        opacity:1;
+      }
+    }
+
+    .lightbox-content-wrapper{
+      position: fixed;
+      width: 100%;
+      max-width: rem(320);
+      top:0;
+      left:0;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      //move to off canvas
+      transform:translate3d(-100%,0,0);
+      opacity:0;
+
+      transition:transform .3s;
+    }    
+
+    &.is-active {
+      .lightbox-content-wrapper {
+        transform:translate3d(0,0,0);
+        opacity:1;
+      }
+    }
+
+      .lightbox-content{
+        background-color: color(4);
+        height: 100%;
+      }
+
+        .lightbox-header {
+          padding:rem(16) rem(20);
+          background-color:color(1);
+        }
+
+          .lightbox-close {
+            display: inline-block;
+            width:rem(60);
+            height: rem(60);            
+            background: url("../content/close.svg");
+            border:none;
+
+            transform: translate3d(0,0,0); 
+            @include animation-duration(.6s);
+            @include animation-name(popUp);
+            @include animation-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.275));
+          }      
+
+          .lightbox-navigation {
+            box-sizing: border-box;
+            padding:rem(16) rem(20);
+
+            button {
+              @include button-reset;        
+              display: block;
+              width:100%;
+              padding:rem(8) 0;                
+              text-decoration:none;
+
+              color:color(3);
+
+              &.active,
+              &:focus {
+                color:color(5);
+                font-weight:bold;
+              }
+
+              &:focus {
+                outline:none;
+              }
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+  }        
+}

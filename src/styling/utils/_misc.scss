@@ -1,0 +1,22 @@
+.sr-only { 
+  @include sr-only;
+}
+
+.no-focus {
+  &:focus {
+    outline:none;
+  }
+}
+
+html.lock-scrolling {
+  overflow: hidden;
+
+  body {
+    //works for most of the browsers except of safari on ios    
+    overflow: hidden;
+    
+    //solution for safari on ios
+    position: fixed;
+    width:100%;
+  }
+}

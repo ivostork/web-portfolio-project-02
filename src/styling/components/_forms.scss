@@ -1,0 +1,254 @@
+//centering using position relative and absolute
+//pseudo element line-height shouldn't be set in relative units
+$select-icon-size:14px;
+$calendar-icon-size:14px;
+
+//radio wrapper
+$boolean-wrapper:rem(24);
+
+//radio value
+$radio-value:rem(14);
+
+@mixin controls-icon {
+  //centering
+  position:absolute;
+  right:rem(12);
+  top:0;
+  bottom:0;
+  margin:auto;    
+  
+  @include icon;
+  color:color(1);    
+}
+
+.form-group {        
+  margin-bottom:rem(24);
+
+  label,
+  legend {
+    display: block;
+  }
+
+  .controls-label {
+    margin-bottom: rem(4);
+  }
+
+  .validation-message {
+    font-size:rem(12);
+    color:color(1);
+    margin-bottom: rem(8);
+  }
+
+  .label-description {
+    margin-top:rem(4);
+    font-size:rem(12);
+    color:color(5);
+  }  
+
+  &.is-invalid {
+    input[type="text"],
+    select {
+      border-color:color(1) !important;
+    }
+  } 
+
+  .controls-select {
+    position: relative;
+    &:after {
+      @include controls-icon;
+      height:$select-icon-size;      
+      content:'select';
+      font-size:$select-icon-size;
+    }
+  }
+
+  .controls-datepicker {
+    position:relative;
+    &:after {
+      @include controls-icon;
+      height:$calendar-icon-size;      
+      content:'calendar';
+      font-size:$calendar-icon-size;
+    }
+  }
+
+  .controls-boolean {
+    //because input has position absolute
+    position: relative;    
+    .controls-boolean-item {
+      display: flex;
+      align-items: center;
+      margin-bottom:rem(16);
+    }
+    
+      //hiding input for the user but not for the screen reader
+      input[type="radio"],
+      input[type="checkbox"] {
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        
+        & + span {
+          //centering
+          display: flex;
+          align-items: center;
+          justify-content: center;          
+          
+          flex: 0 1 $boolean-wrapper;
+          
+          min-width:$boolean-wrapper;
+          height:$boolean-wrapper;
+
+          margin-right:rem(12);
+          
+          background-color: color(4);
+          border: 1px solid color(6);    
+        }
+      }
+
+      label {                
+        color:color(5);
+        font-size: rem(14); 
+      }
+            
+      input[type="radio"] {
+        //radio wrapper
+        & + span {                
+          border-radius: 50%; 
+          
+          //radio value off
+          &:before {
+            content:""; 
+            //centering         
+            width: $radio-value;        
+            height: $radio-value;                              
+            
+            background-color: color(1);
+            border-radius: 50%;
+
+            opacity:0;
+            transform:scale(0);
+            transition: opacity .3s, transform .3s; 
+          }                            
+        }
+        
+        &:checked + span {
+          //radio value on
+          &:before {
+            opacity:1;
+            transform:scale(1);
+          }
+        }                
+      }
+      
+      input[type="checkbox"] {
+        //radio wrapper
+        & + span {                                    
+          //radio value off
+          &:before {
+            content:"check"; 
+            //centering          
+            @include icon;
+            color:color(1);                            
+                        
+            opacity:0;
+            transform:scale(0);
+            transition: opacity .3s, transform .3s; 
+          }                            
+        }
+        
+        &:checked + span {
+          //radio value on
+          &:before {
+            opacity:1;
+            transform:scale(1);
+          }
+        }                
+      }       
+    }
+  
+    .controls-segmented {
+      display: flex;
+      align-items: center;    
+
+      position:relative;
+      
+      .controls-segmented-item {
+        
+        margin-left:-1px;
+
+        &:first-child {
+          margin-left:0;
+        }
+        
+
+        //hide input for user but not for screen reader
+        input[type="radio"] {
+          vertical-align: middle;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+        }
+
+        flex:1 1 rem(42);
+        min-width:rem(42);        
+      }
+      
+      label {
+        display: block;        
+        height:rem(42);
+        text-align: center;
+        line-height: rem(42);
+        position: relative;        
+        
+        color:color(3);
+        border: 1px solid color(5);
+        background-color: color(4);
+
+        &:before {       
+          position: absolute;          
+          width:100%;          
+          content:"";    
+          display: block;
+          height: rem(42);
+          line-height: rem(42);
+          background-color: color(1);          
+
+          opacity:0;
+          transition: opacity .3s; 
+        }
+
+        span {
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+      input[type="radio"]:checked + label {
+        &:before {
+          opacity:1;
+        }
+
+        span {
+          color:color(4);
+        }
+      }
+      
+    } 
+
+  
+
+
+  //statuses
+  &.is-disabled {
+    .controls-select,
+    .controls-datepicker{
+      &:after {
+        color:color(5);
+      }
+    }
+  }
+}

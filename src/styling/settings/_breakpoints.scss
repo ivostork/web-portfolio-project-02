@@ -1,0 +1,51 @@
+$xl:1200;
+$lg:992;
+$md:768;
+$sm:576;
+$xs:416;
+
+
+$breakpoint-xl: em($xl);
+$breakpoint-lg: em($lg);
+$breakpoint-md: em($md);
+$breakpoint-sm: em($sm);
+$breakpoint-xs: em($xs);
+
+$breakpoint-lg-max: em($xl - 1);
+$breakpoint-md-max: em($lg - 1);
+$breakpoint-sm-max: em($md - 1);
+$breakpoint-xs-max: em($sm - 1);
+$breakpoint-xxs-max: em($xs - 1);
+
+$bp-xl:"(min-width: #{$breakpoint-xl})";
+
+$bp-lg:"(min-width: #{$breakpoint-lg}) and (max-width: #{$breakpoint-lg-max})";
+$bp-lg-xl:  "(min-width: #{$breakpoint-lg})";
+
+$bp-md:     "(min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-md-max})";
+$bp-md-lg:  "(min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-lg-max})";
+$bp-md-xl:  "(min-width: #{$breakpoint-md})";
+
+$bp-sm:     "(min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-sm-max})";
+$bp-sm-md:  "(min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-md-max})";
+$bp-sm-lg:  "(min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-lg-max})";
+$bp-sm-xl:  "(min-width: #{$breakpoint-sm})";
+
+$bp-xs:     "(min-width: #{$breakpoint-xs}) and (max-width: #{$breakpoint-xs-max})";
+$bp-xs-sm:  "(min-width: #{$breakpoint-xs}) and (max-width: #{$breakpoint-sm-max})";
+$bp-xs-md:  "(min-width: #{$breakpoint-xs}) and (max-width: #{$breakpoint-md-max})";
+$bp-xs-lg:  "(min-width: #{$breakpoint-xs}) and (max-width: #{$breakpoint-lg-max})";
+$bp-xs-xl:  "(min-width: #{$breakpoint-xs})";
+
+$bp-xxs:    "(max-width: #{$breakpoint-xxs-max})";
+$bp-xxs-xs: "(max-width: #{$breakpoint-xs-max})";
+$bp-xxs-sm: "(max-width: #{$breakpoint-sm-max})";
+$bp-xxs-md: "(max-width: #{$breakpoint-md-max})";
+$bp-xxs-lg: "(max-width: #{$breakpoint-lg-max})";
+
+//usage
+/*
+@media #{$bp-xs-xl} {
+@include generate-columns("xs");
+}
+*/

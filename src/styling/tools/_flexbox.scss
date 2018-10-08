@@ -1,0 +1,86 @@
+/*//////////////////////
+//   Flexbox mixins   //
+////////////////////////
+
+- provides vendor prefixes
+- uniforms 2011 syntax with the new one
+- supports IE10+, Firefox 26+
+
+TODO: needs revision, I changed the order of the prefixes, nonprefixed prop=
+erty should be always the last
+
+
+
+/*/////////////////////////////////
+//   Flexbox parent properties   //
+///////////////////////////////////
+
+@mixin flexbox() {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin inline-flexbox() {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin flex-direction($direction: row) {
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-flow($flow: row nowrap) {
+  -webkit-flex-flow: $flow;
+  -ms-flex-flow: $flow;
+  flex-flow: $flow;
+}
+
+@mixin flex-wrap($wrap: nowrap) {
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+// values: flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align: flex-start) {
+  -webkit-align-items: $align;
+  -ms-flex-align: $align; // TODO: IE10 has differenattribute names, apply conditions here
+  align-items: $align;
+}
+
+// values: flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -ms-flex-pack: $justify; // TODO: IE10 has differet attribute names, apply conditions here
+  // : in IE10 there is "justify" property instead o"space-between"
+  justify-content: $justify;
+}
+
+
+
+///////////////////////////////////
+// Flexbox children properties   //
+///////////////////////////////////
+
+// provide grow+shrink+basis attributes separated by space, example: @inclde flex(1 1 auto);
+@mixin flex($flex) {
+  -webkit-flex: $flex;
+  -ms-flex: $flex;
+  flex: $flex;
+}
+
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -ms-flex-item-align: $align;
+  align-self: $align;
+}
+
+@mixin order($number) {
+  order:$number;
+  -webkit-order:$number;
+  -ms-flex-order:$number;
+}

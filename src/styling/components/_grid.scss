@@ -1,0 +1,156 @@
+// http://gridcalculator.dk/#/1280/12/20/20
+
+$grid-gutter: rem(20);
+$grid-gutter-narrow: rem(12);
+
+///////////////
+//  Grid row //
+///////////////
+
+.row {
+  margin-left: - $grid-gutter / 2;
+  margin-right: - $grid-gutter / 2;
+  @include flexbox;
+  @include flex-wrap(wrap);
+}
+
+.row.row-nowrap {
+  @include flex-wrap(nowrap);
+}
+
+.row.narrow-gutter {
+  margin-left: - $grid-gutter-narrow / 2;
+  margin-right: - $grid-gutter-narrow / 2;
+
+  > [class^="col-"] {
+    padding-left: $grid-gutter-narrow / 2;
+    padding-right: $grid-gutter-narrow / 2;
+  }
+}
+
+// columns aligned to the center of the row container
+.row-center {
+  @include justify-content(center);
+}
+
+// columns aligned to the right of the row container
+.row-right {
+  @include justify-content(flex-end);
+}
+
+////////////////////
+//  Grid columns  //
+////////////////////
+
+// # Shared column styles
+@mixin col-common {
+  box-sizing: border-box;
+  padding-left: $grid-gutter / 2;
+  padding-right: $grid-gutter / 2;
+  @include flex(0 0 100%);
+  max-width: 100%;
+}
+
+.row {
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    @include col-common;
+  }
+}
+
+// # Styles for individual widths and modifiers
+@mixin generate-columns($breakpoint: false, $columns: 12) {
+    $prefix: ".col";
+    @if $breakpoint != false {
+      $prefix: ".col-#{$breakpoint}";
+    }
+
+    $col-suffix: "";
+    @if $columns != 12 {
+      $col-suffix: "-#{$columns}";
+    }
+
+    .row {
+      // columns width
+      @for $i from 1 through $columns {
+        & > #{$prefix}-#{$i}#{$col-suffix} {
+          @include flex(0 0 auto);
+          width: percentage($i / $columns);
+        }
+      }
+
+      // columns fixed/fluid width
+      & > #{$prefix}-fluid {
+        @include flex(1 1 0px);
+        width: auto;
+      }
+      & > #{$prefix}-auto {
+        @include flex(0 0 auto);
+        width: auto;
+      }                        
+  }
+}
+
+
+// # For all breakpoints
+@include generate-columns();
+
+@media #{$bp-xs-xl} {
+  @include generate-columns("xs");
+}
+
+@media #{$bp-sm-xl} {
+  @include generate-columns("sm");
+}
+
+@media #{$bp-md-xl} {
+  @include generate-columns("md");
+}
+
+@media #{$bp-lg-xl} {
+  @include generate-columns("lg");
+}
+
+@media #{$bp-lg-xl} {
+  @include generate-columns("xl");
+}
+
+
+// # Make direct column child match height of the column
+.row {
+  > [class^="col-"],
+  > [class*=" col-"] {
+      &.col-equalise {
+        @include flexbox;
+        @include flex-direction(column);
+        @include flex-wrap(nowrap);
+        @include align-items(stretch);
+      }
+
+      &.col-equalise > * {
+        @include flex(1 0 auto);
+      }
+
+      &.col-equalise > .no-stretch {
+        @include flex(0 0 auto);
+      }
+  }
+}
+
+
+// # Vertical alignment of content in the column
+// .col-top {
+//   @include align-self(flex-start);
+// }
+
+.col-middle {
+  @include align-self(center);
+}
+
+.col-bottom {
+  @include align-self(flex-end);
+}
+
+// .col-baseline {
+//   @include fnz-align-self(baseline);
+// }

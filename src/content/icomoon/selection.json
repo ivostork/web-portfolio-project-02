@@ -1,0 +1,159 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M884.364 93.091h-46.546v-93.091h-93.091v93.091h-465.455v-93.091h-93.091v93.091h-46.546c-51.2 0-93.091 41.891-93.091 93.091v744.728c0 51.2 41.891 93.091 93.091 93.091h744.728c51.2 0 93.091-41.891 93.091-93.091v-744.728c0-51.2-41.891-93.091-93.091-93.091zM884.364 930.909h-744.728v-605.092h744.728v605.092z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "calendar"
+        ]
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 5,
+        "id": 3,
+        "name": "calendar",
+        "prevSize": 32,
+        "code": 59651,
+        "ligatures": "calendar"
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M0 307.2l512 512 512-512z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "dropdown"
+        ],
+        "grid": 0
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 2,
+        "id": 0,
+        "name": "select",
+        "prevSize": 32,
+        "code": 59648,
+        "ligatures": "select"
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 1
+    },
+    {
+      "icon": {
+        "paths": [
+          "M340.934 749.781l-237.781-237.781-80.972 80.401 318.752 318.752 684.26-684.26-80.401-80.401z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "check"
+        ],
+        "grid": 0
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 3,
+        "id": 1,
+        "name": "check",
+        "prevSize": 32,
+        "code": 59649,
+        "ligatures": "check"
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 2
+    },
+    {
+      "icon": {
+        "paths": [
+          "M403.343 716.231l80.213 80.213 284.444-284.444-284.444-284.444-80.213 80.213 146.773 147.343h-550.116v113.777h550.116l-146.773 147.343zM910.223 0h-796.444c-63.147 0-113.777 51.2-113.777 113.777v227.556h113.777v-227.556h796.444v796.444h-796.444v-227.556h-113.777v227.556c0 62.577 50.631 113.777 113.777 113.777h796.444c62.577 0 113.777-51.2 113.777-113.777v-796.444c0-62.577-51.2-113.777-113.777-113.777z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "logout"
+        ],
+        "grid": 0
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 4,
+        "id": 2,
+        "name": "logout",
+        "prevSize": 32,
+        "code": 59650,
+        "ligatures": "logout"
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 3
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon"
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50,
+    "showCodes": false,
+    "gridSize": 16,
+    "showLiga": true
+  }
+}

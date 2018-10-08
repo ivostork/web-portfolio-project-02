@@ -1,0 +1,34 @@
+.navigation-meta {
+  display: flex;
+  align-content: center;  
+
+  .navigation-copy {
+    display: inline-block;    
+    color:color(5);
+    padding:0 rem(12); 
+    padding-left:0;   
+  }
+
+  .navigation-divider {
+    display: inline-block;
+    width: 1px;
+    height: rem(24);
+    background: color(5);
+  }
+
+  .navigation-logout {
+    @include button-reset;
+    display: inline-block;
+    position: relative;
+    color:color(6);
+    padding:0 rem(12);        
+
+    &:before {
+      @include icon;
+      content:"logout";
+      font-size: 24px;
+      line-height: 24px;
+      height: 24px;
+    }
+  }
+}

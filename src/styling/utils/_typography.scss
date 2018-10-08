@@ -1,0 +1,50 @@
+///////////////////
+//  Font weights //
+///////////////////
+
+.text-light {
+ font-weight: 300 !important;
+}
+
+.text-normal {
+  font-weight: normal !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-black {
+  font-weight: 900 !important;
+}
+
+
+
+//////////////////////
+//  Text alignment  //
+//////////////////////
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+////////////////
+//  Wrapping  //
+////////////////
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+
+.limit-paragraph {
+  max-width:rem(620);
+}

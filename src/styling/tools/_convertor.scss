@@ -1,0 +1,25 @@
+/*
+  RELATIVE UNITS
+*/
+
+/* 
+- Spacing and font sizes should be relative to the font size which is set by browser (16px usually)
+- Which means that you should use relative unit for 99% cases with some exceptions - (1px border)
+- There is one small exception - media queries shuld be used with em - some browsers have issues with rem in media queries (Safari)
+- Let's say width is set in px and user will increase the font size - the text will not fit into the container
+- It would be dangerous to set padding in em because em is always relative to the font size feature
+*/
+
+/**
+ * CONVERTOR - when using em(breakpoints),rem (almost everything else) everything changes proportionally when user will modify browser font size
+ */
+
+ $base:16;
+
+ @function em($px) {
+   @return ($px/$base)*1em;
+ }
+ 
+ @function rem($px) {
+    @return ($px/$base)*1rem;
+ }

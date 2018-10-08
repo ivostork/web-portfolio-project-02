@@ -1,0 +1,25 @@
+[class^="badge-status"] {
+  display: inline-block;
+  height: rem(22);
+  line-height: 1;
+  padding:rem(6);
+  box-sizing: border-box;
+
+  color:color(4);
+  font-size: rem(10);
+  font-weight:bold;
+  text-transform: uppercase;
+  letter-spacing: .44px;
+} 
+
+.badge-status-active {
+  background-color:color(8);
+}
+
+.badge-status-pending {
+  background-color:color(9);
+}
+
+.badge-status-closed {
+  background-color:color(10);
+}

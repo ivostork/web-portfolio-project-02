@@ -1,0 +1,45 @@
+/* 
+  ITCSS  - inverted triangle approach invented by Harry Roberts
+*/
+//Tools – Mixins and functions (no CSS output)
+@import 'tools/convertor';
+@import 'tools/accessibility';
+@import 'tools/animations';
+@import 'tools/flexbox';
+@import 'tools/misc';
+
+//Settings – Preprocessor variables and methods (no CSS output)
+@import 'settings/colors';
+@import 'settings/breakpoints';
+
+//Generic – CSS resets which might include Eric Meyer’s reset, Normalize.css, or your own batch of code
+@import 'generic/normalize';
+@import 'generic/reset';
+
+//Elements – Single HTML element selectors without classes
+@import 'elements/site';
+@import 'elements/typography';
+@import 'elements/forms';
+@import 'elements/table';
+
+//Components – Aesthetic classes for styling any & all page elements (often combined with the structure of object classes)
+@import 'components/container';
+@import 'components/grid';
+@import 'components/lists';
+@import 'components/typography'; 
+@import 'components/buttons';
+@import 'components/layout'; 
+@import 'components/forms';
+@import 'components/badges';
+@import 'components/tables';
+@import 'components/header';
+@import 'components/navigation-meta'; 
+@import 'components/lightbox'; 
+
+@import 'components/styleguide';
+
+//Utils – The most specific styles for overriding anything else in the triangle
+@import 'utils/misc';
+@import 'utils/spacing';
+@import 'utils/typography';
+@import 'utils/table';

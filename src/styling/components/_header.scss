@@ -1,0 +1,86 @@
+.header {
+  background-color: color(4);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
+  margin-bottom: rem(40);
+
+  @media #{$bp-md-xl} {
+    border-bottom:rem(8) solid color(1);    
+  }
+
+  .logo {
+    display: inline-block;
+    height:rem(60);
+    //path is relative to file where is index sass
+    background-image: url("../content/logo.svg");
+  }
+
+  .header-md-xl {
+    display: none;
+    padding-top:rem(10);
+
+    @media #{$bp-md-xl} {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo{
+      width:rem(233);
+    }
+
+    .navigation-meta {
+      justify-content: flex-end;
+      margin-bottom: rem(24);
+    }    
+  
+    .navigation-md-xl nav {      
+      @media #{$bp-md-xl} {
+        display: flex;
+        justify-content: flex-end;
+      }
+        
+      button {
+        @include button-reset;
+        padding:rem(16) rem(32);
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: .75px;        
+        font-size: rem(14);
+        font-weight: bold;
+
+        border-bottom: rem(4) solid color(2);        
+        
+        &.active {
+          color:color(4);
+          background:color(1);
+          border-bottom-color: transparent;          
+        }
+      }      
+    }
+  }
+  
+  .header-xxs-sm {
+    display: none;
+    padding-top:rem(16);
+    padding-bottom:rem(16);
+
+    @media #{$bp-xxs-sm} {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;            
+
+      .hamburger {
+        display: inline-block;
+        width:rem(60);
+        height: rem(60);
+        background: url("../content/hamburger.svg");
+        border:none;
+      }
+
+      .logo {          
+        width:rem(60);
+      }
+    }  
+
+  }
+}
