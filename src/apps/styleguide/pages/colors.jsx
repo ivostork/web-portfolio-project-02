@@ -10,11 +10,11 @@ export default class Colors extends React.Component {
         <p>Primary color, accent color</p>
         <div className="row mb-32">
           <div className="col-auto">
-            <div className="color" style={{backgroundColor: "#E6625E"}}>
+            <div className="color" style={{backgroundColor: "#053164"}}>
             </div>
           </div>
           <div className="col-auto">
-            <div className="color" style={{backgroundColor: "#54BDD7"}}>
+            <div className="color" style={{backgroundColor: "#FE667B"}}>
             </div>
           </div>
         </div>
@@ -26,6 +26,10 @@ export default class Colors extends React.Component {
           </div>
           <div className="col-auto">
             <div className="color" style={{backgroundColor: "rgba(0,0,0,.54"}}>
+            </div>
+          </div>
+          <div className="col-auto">
+            <div className="color" style={{backgroundColor: "rgba(0,0,0,.32"}}>
             </div>
           </div>
           <div className="col-auto">
@@ -41,6 +45,10 @@ export default class Colors extends React.Component {
           </div>
           <div className="col-auto">
             <div className="color" style={{backgroundColor: "#f0f0f0"}}>
+            </div>
+          </div>
+          <div className="col-auto">
+            <div className="color" style={{backgroundColor: "#fafafa"}}>
             </div>
           </div>
         </div>
