@@ -10,6 +10,7 @@ import Colors from "./pages/colors";
 import Grid from "./pages/grid";
 import Typography from "./pages/typography";
 import Buttons from "./pages/buttons";
+import Icons from "./pages/icons";
 import InputsSelects from "./pages/inputsselects";
 import Datepicker from "./pages/datepicker";
 import CheckboxesRadios from "./pages/checkboxesradios";
@@ -41,12 +42,56 @@ export default class Structure extends React.Component {
     }));
   }
 
-  render() {            
+  render() { 
+    
+    let links = [
+      {
+        path:"/colors",
+        name:"Colors",
+      },
+      {
+        path:"/grid",
+        name:"Grid",
+      },
+      {
+        path:"/typography",
+        name:"Typography",
+      },
+      {
+        path:"/buttons",
+        name:"Buttons",
+      },
+      {
+        path:"/icons",
+        name:"Icons",
+      },
+      {
+        path:"/inputsselects",
+        name:"Inputs, selects",
+      },
+      {
+        path:"/datepicker",
+        name:"Datepicker",
+      },
+      {
+        path:"/checkboxesradios",
+        name:"Checkboxes, radio buttons",
+      },
+      {
+        path:"/badges",
+        name:"Badges",
+      },
+      {
+        path:"/tables",
+        name:"Tables",
+      }
+    ];
+    
     return (
       <div className="styleguide">
         {/* space for lightbox */} 
         <NavigationLightbox closeNavigation={this.handleCloseButton} isLightboxOn={this.state.isLightboxOn}>
-          <Navigation handleCloseButton={this.handleCloseButton} isLightboxOn={this.state.isLightboxOn} />                
+          <Navigation handleCloseButton={this.handleCloseButton} isLightboxOn={this.state.isLightboxOn} links={links}/>                
         </NavigationLightbox>
         <div>
           <div className="header">
@@ -57,7 +102,7 @@ export default class Structure extends React.Component {
           <div className="container">
             <div className="layout">
               <div className="navigation">                
-                <Navigation handleCloseButton={this.handleCloseButton} isLightboxOn={this.state.isLightboxOn} />                
+                <Navigation handleCloseButton={this.handleCloseButton} isLightboxOn={this.state.isLightboxOn} links={links}/>                
               </div>
               <div className="content">          
                   <Route exact path="/" component={CodeInfo} />          
@@ -65,6 +110,7 @@ export default class Structure extends React.Component {
                   <Route path="/grid" component={Grid} />
                   <Route path="/typography" component={Typography} />
                   <Route path="/buttons" component={Buttons} />
+                  <Route path="/icons" component={Icons} />
                   <Route path="/inputsselects" component={InputsSelects} />
                   <Route path="/datepicker" component={Datepicker} />
                   <Route path="/checkboxesradios" component={CheckboxesRadios} />
