@@ -24,30 +24,12 @@ export default class Typography extends React.Component {
 
         <div className="mb-32">
         <span>
-          Form category heading using element <strong>h6</strong>
+          Table heading using element <strong>h6</strong>
         </span>
         <h6>
           Form category heading
         </h6>
-        </div>
-
-        <div className="mb-32">
-          <span>
-            Plain list using class <strong>.list</strong>
-          </span>
-          <ul className="list">
-            <li>
-              list item
-            </li>
-            <li>
-              list item
-            </li>
-            <li>
-              list item
-            </li>
-          </ul>
-        </div>
-
+        </div>      
       </div>
     );
   }

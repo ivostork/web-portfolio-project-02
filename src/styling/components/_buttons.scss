@@ -5,18 +5,22 @@
   vertical-align: middle;
   box-sizing: border-box;
 
-  padding: rem(12) rem(16);
+  padding: rem(10) rem(20);
   line-height: 1;
-  height:rem(42);
+  min-height:rem(40);
   
   opacity: 1;
   text-align: center;
   text-decoration: none;
 
+
   cursor: pointer;
   background:none;
   border:none;
-  letter-spacing: .44px;
+  
+  font-size:rem(14);
+  font-weight:bold;
+  letter-spacing: 1px;
 
   &:active {
     @include transform(scale(0.98));
@@ -32,7 +36,7 @@
 
 .btn-primary {
   border-radius:rem(4);
-  color:color(4);
+  color:color(2);
   background-color: color(1);
   border:1px solid transparent;
 
@@ -46,7 +50,7 @@
 .btn-secondary {
   border-radius:rem(4);
   color:color(1);
-  background-color: color(4);
+  background-color: color(10);
   border:1px solid color(1);
 
   text-decoration: none;
@@ -56,8 +60,7 @@
   }
 }
 
-.btn-link {
-  text-decoration:underline;
+.btn-link {  
   color: color(1);  
 
   &:hover {
