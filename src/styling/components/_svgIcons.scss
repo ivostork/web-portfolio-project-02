@@ -1,0 +1,72 @@
+.svgIcon {
+  display: inline-block;
+  vertical-align: middle;
+
+  @at-root {
+    &-logo {
+      width:rem(73);
+      height:rem(56);
+    }
+
+    &-plus {
+      width:rem(14);
+      height:rem(14);
+    }
+
+    &-userDetails {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-chevronDown {
+      width:rem(12);
+      height:rem(7);
+    }
+
+    &-labour {
+      width:rem(16);
+      height:rem(16);
+    }
+
+    &-documents {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-purchasing {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-communication {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-reports {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-settings {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-tasks {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-bulletin {
+      width:rem(24);
+      height:rem(24);
+    }
+
+    &-query {
+      width:rem(24);
+      height:rem(24);
+    }
+  }  
+}
+

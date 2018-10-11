@@ -58,13 +58,13 @@ export default class Structure extends React.Component {
         name:"Typography",
       },
       {
-        path:"/buttons",
-        name:"Buttons",
-      },
-      {
         path:"/icons",
         name:"Icons",
       },
+      {
+        path:"/buttons",
+        name:"Buttons",
+      },      
       {
         path:"/inputsselects",
         name:"Inputs, selects",
@@ -88,7 +88,7 @@ export default class Structure extends React.Component {
     ];
     
     return (
-      <div className="styleguide">
+      <div>
         {/* space for lightbox */} 
         <NavigationLightbox closeNavigation={this.handleCloseButton} isLightboxOn={this.state.isLightboxOn}>
           <Navigation handleCloseButton={this.handleCloseButton} isLightboxOn={this.state.isLightboxOn} links={links}/>                
@@ -109,8 +109,8 @@ export default class Structure extends React.Component {
                   <Route path="/colors" component={Colors} />
                   <Route path="/grid" component={Grid} />
                   <Route path="/typography" component={Typography} />
-                  <Route path="/buttons" component={Buttons} />
                   <Route path="/icons" component={Icons} />
+                  <Route path="/buttons" component={Buttons} />
                   <Route path="/inputsselects" component={InputsSelects} />
                   <Route path="/datepicker" component={Datepicker} />
                   <Route path="/checkboxesradios" component={CheckboxesRadios} />

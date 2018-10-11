@@ -15,7 +15,7 @@ export default class Typography extends React.Component {
         
         <div className="mb-32">
           <span>
-            Main heading using element <strong>h1</strong>
+            Main heading used by element <strong>h1</strong>
           </span>
           <h1>
             Main Heading
@@ -24,10 +24,10 @@ export default class Typography extends React.Component {
 
         <div className="mb-32">
         <span>
-          Table heading using element <strong>h6</strong>
+          Table heading used by element <strong>h6</strong>
         </span>
         <h6>
-          Form category heading
+          Table heading
         </h6>
         </div>      
       </div>

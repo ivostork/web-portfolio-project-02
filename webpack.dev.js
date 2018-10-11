@@ -8,7 +8,7 @@ module.exports = merge(common, {
   plugins:[
     new webpack.HotModuleReplacementPlugin()    
   ],
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   devServer: {
     //contentBase: path.resolve(__dirname, './src/content/img'),
     port: 9000,

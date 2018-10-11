@@ -8,9 +8,7 @@
   }
 }
 
-#styleguide {
-  .styleguide {    
-
+#styleguide {  
     .logo {
       display: inline-block;
       width:rem(73);
@@ -108,7 +106,7 @@
           background-color: color(2);
           padding:rem(20);
           height:rem(60);          
-        }
+        }        
 
     
     // Lightbox
@@ -216,5 +214,4 @@
               }
             }
     }        
-  }
 }
