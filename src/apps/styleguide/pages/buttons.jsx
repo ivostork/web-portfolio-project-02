@@ -1,4 +1,5 @@
 import React from "react";
+import {SvgIcons, SvgIcon} from "./../../core/SvgIcon";
 
 export default class Buttons extends React.Component {
   render() {
@@ -24,6 +25,13 @@ export default class Buttons extends React.Component {
           <p className="mb-8">Button link</p>
           <button type="button" className="btn-link">
             Button link
+          </button>
+        </div>
+        <div className="mb-32">
+          <p className="mb-8">Button link</p>
+          <button type="button" className="btn-pdf">
+            <SvgIcon iconName="file" />
+            Export to PDF
           </button>
         </div>
       </div>

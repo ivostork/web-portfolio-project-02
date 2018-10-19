@@ -15,6 +15,7 @@
       height:rem(56);
       //path is relative to file where is index sass
       background: url("../content/logo.svg") no-repeat;
+      background-size: contain;
     }
 
       .header-xxs-sm {

@@ -5,8 +5,7 @@
   vertical-align: middle;
   box-sizing: border-box;
 
-  padding: rem(10) rem(20);
-  line-height: 1;
+  padding: rem(8) rem(20);
   min-height:rem(40);
   
   opacity: 1;
@@ -30,7 +29,8 @@
 
 .btn-primary,
 .btn-secondary,
-.btn-link {
+.btn-link,
+.btn-pdf {
   @include btn-structure;  
 }
 
@@ -60,10 +60,21 @@
   }
 }
 
-.btn-link {  
+.btn-link,
+.btn-pdf {  
   color: color(1);  
-
   &:hover {
     text-decoration:none
+  }
+}
+
+.btn-pdf {
+  @include inline-flexbox();
+  @include align-items(center);
+  
+  .svgIcon-file{
+    margin-right:rem(8);
+    stroke: color(1);
+    stroke-width: .5px;
   }
 }
