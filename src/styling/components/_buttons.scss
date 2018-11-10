@@ -78,3 +78,7 @@
     stroke-width: .5px;
   }
 }
+
+.btn-dropdown {
+  @include btn-structure;
+}

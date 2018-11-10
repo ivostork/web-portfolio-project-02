@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js"
   },
   "author": "Ivo Stork <ivos.stork@gmail.com>",
