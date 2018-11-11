@@ -81,4 +81,14 @@
 
 .btn-dropdown {
   @include btn-structure;
+
+  //display none by default
+  .btn-dropdown-menu {
+    display: none;
+  }
 }
+
+.btn-dropdown-personal {
+
+}
+

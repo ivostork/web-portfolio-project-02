@@ -35,7 +35,7 @@ export default class ButtonDropdown extends React.Component {
           {this.props.title}
          </span>                   
         </button>        
-        <div role="menu"> 
+        <div role="menu" className="btn-dropdown-menu">
           {this.getDropdDownActions()}         
         </div>
       </div>
