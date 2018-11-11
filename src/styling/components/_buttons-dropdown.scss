@@ -3,8 +3,16 @@
     @include btn-structure;
   }
 
+  &.btn-dropdown-on {
+    .btn-dropdown-menu {
+      display: block;
+    }
+  }
+
   //display none by default
   .btn-dropdown-menu {
+    display: none;
+
     position: relative;
     width: rem(180);
     margin-top:rem(8);
@@ -100,5 +108,8 @@
   .svgIcon-chevronDown {
     fill:color(5);
     @include order(3);
+
+    @include transform(rotate(0deg));
+
   }
 }
