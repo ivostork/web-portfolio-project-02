@@ -18,7 +18,7 @@ export default class ButtonDropdown extends React.Component {
 
   getDropdDownActions() {
     let dropDownActions = this.props.links.map((item,index) => (
-        <button key={index} role="menuitem">
+        <button key={index} role="menuitem" className="btn-dropdown-item">
           {item}
         </button>
       )
@@ -28,9 +28,9 @@ export default class ButtonDropdown extends React.Component {
 
   render() {                
     return (
-      <div className={"btn-dropdown-container " + this.props.class}>
+      <div className={"btn-dropdown-container " + this.props.class + ((this.state.isDropdownOn) ? " btn-dropdown-on" : "")}>
         <button
-            className={"btn-dropdown"+ ((this.state.isDropdownOn) ? " btn-dropdown-on" : "")}
+            className={"btn-dropdown"}
             type="button" onClick={this.handleDropdownButton}
             aria-haspopup={true}
             aria-expanded={this.state.isDropdownOn}>
