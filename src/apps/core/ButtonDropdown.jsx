@@ -28,8 +28,12 @@ export default class ButtonDropdown extends React.Component {
 
   render() {                
     return (
-      <div className={this.props.class}>
-        <button className={"btn-dropdown"+ ((this.state.isDropdownOn) ? " btn-dropdown-on" : "")} type="button" onClick={this.handleDropdownButton} aria-haspopup={true} aria-expanded={this.state.isDropdownOn}>
+      <div className={"btn-dropdown-container " + this.props.class}>
+        <button
+            className={"btn-dropdown"+ ((this.state.isDropdownOn) ? " btn-dropdown-on" : "")}
+            type="button" onClick={this.handleDropdownButton}
+            aria-haspopup={true}
+            aria-expanded={this.state.isDropdownOn}>
           {this.props.children}
          <span className="btn-dropdown-title">
           {this.props.title}
