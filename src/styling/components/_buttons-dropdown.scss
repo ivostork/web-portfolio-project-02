@@ -110,6 +110,12 @@
     @include order(3);
 
     @include transform(rotate(0deg));
+    transition: transform .3s;
+  }
 
+  &.btn-dropdown-on {
+    .svgIcon-chevronDown {
+      @include transform(rotate(180deg));
+    }
   }
 }

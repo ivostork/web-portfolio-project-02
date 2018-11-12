@@ -6,8 +6,7 @@
 - uniforms 2011 syntax with the new one
 - supports IE10+, Firefox 26+
 
-TODO: needs revision, I changed the order of the prefixes, nonprefixed prop=
-erty should be always the last
+// TODO: needs revision, I changed the order of the prefixes, nonprefixed property should be always the last
 
 
 
@@ -48,14 +47,14 @@ erty should be always the last
 // values: flex-start | flex-end | center | baseline | stretch
 @mixin align-items($align: flex-start) {
   -webkit-align-items: $align;
-  -ms-flex-align: $align; // TODO: IE10 has differenattribute names, apply conditions here
+  -ms-flex-align: $align; // TODO: IE10 has different attribute names, apply conditions here
   align-items: $align;
 }
 
 // values: flex-start | flex-end | center | space-between | space-around
 @mixin justify-content($justify) {
   -webkit-justify-content: $justify;
-  -ms-flex-pack: $justify; // TODO: IE10 has differet attribute names, apply conditions here
+  -ms-flex-pack: $justify; // TODO: IE10 has different attribute names, apply conditions here
   // : in IE10 there is "justify" property instead o"space-between"
   justify-content: $justify;
 }
@@ -80,7 +79,7 @@ erty should be always the last
 }
 
 @mixin order($number) {
-  order:$number;
   -webkit-order:$number;
   -ms-flex-order:$number;
+  order:$number;
 }
