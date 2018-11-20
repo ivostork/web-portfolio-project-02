@@ -1,4 +1,6 @@
 import React from "react";
+import { CSSTransition } from "react-transition-group";
+
 
 export default class ButtonDropdown extends React.Component {
   constructor(props) {
@@ -50,7 +52,7 @@ export default class ButtonDropdown extends React.Component {
     this.initialiseFocusStack();
 
     // menu has just opened using arrow DOWN
-    if(this.keyCodePressed === 40) {
+    if((this.keyCodePressed === 40)||(this.keyCodePressed === 32)||(this.keyCodePressed === 13)) {
       this.menuContainer.current.children[0].focus();
     }
 
@@ -95,16 +97,28 @@ export default class ButtonDropdown extends React.Component {
 
   //open for arrow down, up
   handleKeyDownMenuButton(e) {
-    //open for arrow down - open and focus for the first item
+    //open for arrow DOWN - open and focus for the first item
     if(e.keyCode === 40) {
       //open Menu
       this.keyCodePressed = 40;
       this.openMenu();
     }
-    //open for arrow up - focus for the last item
+    //open for arrow UP - focus for the last item
     if(e.keyCode === 38) {
       //open Menu
       this.keyCodePressed = 38;
+      this.openMenu();
+    }
+    //open for SPACE - focus for the first item
+    if(e.keyCode === 32) {
+      //open Menu
+      this.keyCodePressed = 32;
+      this.openMenu();
+    }
+    //open for ENTER - focus for the first item
+    if(e.keyCode === 13) {
+      //open Menu
+      this.keyCodePressed = 13;
       this.openMenu();
     }
   }
@@ -186,13 +200,20 @@ export default class ButtonDropdown extends React.Component {
          <span className="btn-dropdown-title">
           {this.props.title}
          </span>                   
-        </button>        
-        <div
-            role="menu"
-            className="btn-dropdown-menu"
-            ref={this.menuContainer}>
-          {this.getDropdDownActions()}         
-        </div>
+        </button>
+        <CSSTransition
+          in={this.state.isDropdownOn}
+          timeout={300}
+          classNames="btn-dropdown-menu-container"
+          unmountOnExit
+         >
+          <div
+              role="menu"
+              className="btn-dropdown-menu"
+              ref={this.menuContainer}>
+            {this.getDropdDownActions()}
+          </div>
+        </CSSTransition>
       </div>
     );
   }
