@@ -301,8 +301,9 @@ class SvgIcon extends React.Component {
         width={svgIconWidth + "px"}
         height={svgIconHeight + "px"}
         aria-hidden="true"
-        dangerouslySetInnerHTML={{__html: svgIconContent}}>        
-        </svg>
+        dangerouslySetInnerHTML={{__html: svgIconContent}}
+        focusable="false">
+      </svg>
     );
   }
 }
